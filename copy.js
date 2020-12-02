@@ -1,9 +1,16 @@
 const fsPromises = require('fs').promises;
 
-fsPromises.readFile('./README.md', 'utf-8')
-    .then(data => {
-        fsPromises.writeFile('./copiedFile.txt', data, 'utf-8')
-    })
-    .catch(err => {
-        console.log(err);
-    });
+function copy(src, dst) {
+
+    return fsPromises.readFile(src, 'utf-8')
+        .then(data => {
+            fsPromises.writeFile(dst, data, 'utf-8');
+        });
+
+}
+
+
+module.exports = {
+    copy
+};
+
