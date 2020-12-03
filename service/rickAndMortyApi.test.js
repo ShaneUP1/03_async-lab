@@ -1,4 +1,4 @@
-const { getCharacter } = require('./rickAndMorty.js');
+const { getCharacter } = require('./rickAndMortyApi.js');
 
 describe('getCharacter fn', () => {
     it('takes an id and returns a character with a specified format', async () => {
