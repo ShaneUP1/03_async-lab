@@ -1,18 +1,14 @@
 const fetch = require('node-fetch');
 
-function getCharacter(id) {
-    return fetch(`https://rickandmortyapi.com/api/character/${id}`)
-        .then(res => {
-            return res.json();
-        })
-        .then(character => {
-            return {
-                name: character.name,
-                status: character.status,
-                species: character.species
-            };
-        });
-
+async function getCharacter(id) {
+    const res = await fetch(`https://rickandmortyapi.com/api/character/${id}`)
+    const json = await res.json();
+    const character = {
+        name: json.name,
+        status: json.status,
+        species: json.species
+    };
+    return character;
 }
 
 
