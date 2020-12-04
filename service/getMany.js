@@ -6,4 +6,4 @@ const getManyCharacters = ids => {
 
 module.exports = {
     getManyCharacters
-}
+};

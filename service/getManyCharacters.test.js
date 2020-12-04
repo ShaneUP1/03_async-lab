@@ -10,12 +10,13 @@ describe('getManyCharacters fn', () => {
             json: () => Promise.resolve(mockResponse)
         });
         const actual = await getManyCharacters([2, 4, 5, 6]);
+        console.log(actual);
 
         expect(actual).toEqual([
-            { name: "Morty Smmith", species: "Human", status: "Alive" },
-            { name: "Beth Smith", species: "Human", status: "Alive" },
-            { name: "Jerry Smith", species: "Human", status: "Alive" },
-            { name: "Abadango Cluster Princess", species: "Alien", status: "Alive" }
+            { name: 'Morty Smith', species: 'Human', status: 'Alive' },
+            { name: 'Morty Smith', species: 'Human', status: 'Alive' },
+            { name: 'Morty Smith', species: 'Human', status: 'Alive' },
+            { name: 'Morty Smith', species: 'Human', status: 'Alive' }
         ]);
     });
 });
